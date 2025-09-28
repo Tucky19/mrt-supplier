@@ -11,3 +11,12 @@ h1{color:var(--primary)}
 .slideshow {position:relative;max-width:600px;margin:20px auto;}
 .slideshow img {position:absolute;width:100%;opacity:0;transition:opacity 1s ease-in-out;}
 .slideshow img.active {opacity:1;}
+body {
+  background: #f3f6ff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
