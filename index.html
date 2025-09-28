@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MRT Supplier</title>
-  <link rel="canonical" href="https://www.mrtsupplier.com/">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-<style>
-  body { background:#f3f6ff; }
-  header { border-bottom:2px solid #ddd; }
-</style>
+  <link rel="canonical" href="https://www.mrtsupplier.com/" />
+  <!-- สำคัญ: path ต้องตรงกับ repo ของคุณ -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-
-  <header>
-    <h1>MRT Supplier</h1>
-    <nav>
-      <a href="index.html">หน้าแรก</a>
-      <a href="products.html">สินค้า</a>
-      <a href="contact.html">ติดต่อเรา</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">MRT Supplier</h1>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="products.html">สินค้า</a>
+        <a href="contact.html">ติดต่อเรา</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="hero">
       <h2>ครบ จบ ทุกเบอร์ อะไหล่อุตสาหกรรม</h2>
-      <p>คลังกรองน้ำมันและแบรนด์ชั้นนำ เช่น NTN, Donaldson, MANN, Fleetguard พร้อมทีมผู้เชี่ยวชาญให้คำปรึกษา</p>
+      <p>
+        คลังลูกปืน และไส้กรองแบรนด์ชั้นนำ เช่น NTN, Donaldson, MANN, Fleetguard
+        พร้อมทีมผู้เชี่ยวชาญให้คำปรึกษา
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>สินค้าแนะนำ</h3>
+      <ul>
+        <li>NTN Bearings</li>
+        <li>Donaldson Filters</li>
+        <li>MANN Filters</li>
+        <li>Fleetguard</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>ติดต่อเรา</h3>
+      <address>
+        บริษัท เอ็ม อาร์ ที ซัพพลายเออร์ จำกัด<br />
+        15 ชั้น 2 ซอยบรมราชชนนี 39 แขวงตลิ่งชัน เขตตลิ่งชัน กรุงเทพมหานคร 10170<br />
+        Tel: <a href="tel:+66815581323">081-558-1323</a><br />
+        Email: <a href="mailto:sales@mrtsupplier.com">sales@mrtsupplier.com</a><br />
+        LINE: 081-558-1323
+      </address>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 MRT Supplier Co., Ltd. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 MRT Supplier Co., Ltd. All rights reserved.</small>
+    </div>
   </footer>
 
-  <div class="sticky-contact" style="position:fixed;bottom:12px;right:50px;">
-    <a href="tel:+66815581323">📞 โทรเลย</a>
-    <a href="https://line.me/R/ti/p/@mrtsupplier">💬 Line</a>
-    <a href="contact.html">📧 ติดต่อเรา</a>
+  <!-- ปุ่มลัดการติดต่อ (ติดมุมขวาล่าง) -->
+  <div class="sticky-contact">
+    <a class="btn" href="tel:+66815581323">โทรเลย</a>
+    <a class="btn" href="https://line.me/R/ti/p/@mrtsupplier" target="_blank" rel="noopener">LINE</a>
+    <a class="btn" href="contact.html">อีเมล</a>
   </div>
-
 </body>
 </html>
+
