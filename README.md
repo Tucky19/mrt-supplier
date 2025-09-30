@@ -1,2 +1,0 @@
-# MRT Supplier Website
-Professional site bundle
