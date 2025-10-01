@@ -30,30 +30,14 @@ This repository contains the source code for the MRT Supplier website, designed 
 
 ---
 
-## 🚀 Deployment Guide / วิธีการอัปโหลดเว็บไซต์
+## 🛠️ Local Development Guide / วิธีติดตั้งและรันบนเครื่อง
 
-The website is automatically built and deployed via GitHub Actions every time changes are pushed to the `main` branch.  
-เว็บไซต์จะถูกสร้างและอัปโหลดโดยอัตโนมัติผ่าน **GitHub Actions** ทุกครั้งที่มีการ push โค้ดขึ้น branch `main`
+You can clone and run this project locally for development or customization.  
+คุณสามารถโคลนและรันโปรเจกต์นี้บนเครื่องของคุณได้ เพื่อการพัฒนาและปรับแต่งเพิ่มเติม
 
-**Manual steps (if needed) / ขั้นตอนอัปโหลดแบบแมนนวล (ถ้าจำเป็น):**
+### 1️⃣ Clone the repository / โคลนโปรเจกต์
 
-1. Push the latest code to `main` branch  
-   ➤ `git push origin main`
-2. GitHub Actions will build and deploy automatically  
-3. Access the live site at: [https://www.mrtsupplier.com](https://www.mrtsupplier.com)
+```bash
+git clone https://github.com/YourUsername/mrt-supplier.git
+cd mrt-supplier
 
----
-
-## 📞 Contact Information / ข้อมูลติดต่อ
-
-**MRT Supplier Co., Ltd.**  
-📍 Thailand  
-📧 Email: info@mrtsupplier.com  
-🌐 Website: [www.mrtsupplier.com](https://www.mrtsupplier.com)
-
----
-
-## 📜 License / ลิขสิทธิ์
-
-This project is copyrighted © MRT Supplier Co., Ltd. All rights reserved.  
-โปรเจกต์นี้สงวนลิขสิทธิ์โดย © บริษัท เอ็มอาร์ที ซัพพลายเออร์ จำกัด ห้ามทำซ้ำหรือเผยแพร่โดยไม่ได้รับอนุญาต
