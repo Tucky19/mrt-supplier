@@ -3,7 +3,7 @@ name: pages build and deployment
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:          # มีปุ่ม Run workflow ให้กดเองได้
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true    # กันคิวค้าง—ถ้ามีรอบใหม่ ให้ยกเลิกรอบเก่าอัตโนมัติ
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -25,12 +25,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # อัปโหลดไฟล์หน้าเว็บจาก "ราก repo"
-      # (รวม CNAME, index.html, 404.html, contact.html, products.html, assets/)
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and Export Next.js site
+        run: npm run build && npm run export
+
       - name: Upload web files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./out
 
       - name: Deploy to GitHub Pages
         id: deployment
