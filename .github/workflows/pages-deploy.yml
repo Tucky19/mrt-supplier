@@ -1,4 +1,4 @@
-name: pages build and deployment
+name: Deploy static Next.js to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -15,27 +15,45 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build and Export Next.js site
-        run: npm run build && npm run export
+      - name: Build & Export Next.js (static)
+        run: |
+          npm run build
+          npm run export
 
-      - name: Upload web files
+      - name: Prepare files for GitHub Pages
+        run: |
+          # ปิด Jekyll เพื่อให้ไฟล์/โฟลเดอร์ที่ขึ้นต้นด้วย _ ถูกเสิร์ฟได้
+          touch out/.nojekyll
+          # ถ้ามี CNAME ใน root ให้ติดไปที่ out/ ด้วย
+          if [ -f CNAME ]; then cp CNAME out/; fi
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
