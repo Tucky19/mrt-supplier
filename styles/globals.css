@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #cf1020; /* MRT red */
+  --ink: #111827;  /* gray-900 */
+}
+
+html, body, #__next { height: 100%; }
+body { @apply text-gray-800; }
+
+/* Splash transitions */
+.splash-enter { opacity: 0; }
+.splash-enter-active { opacity: 1; transition: opacity 400ms ease; }
+.splash-exit { opacity: 1; }
+.splash-exit-active { opacity: 0; transition: opacity 500ms ease; }
+
+/* Typewriter caret */
+.type-caret::after {
+  content: "│";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink { to { visibility: hidden; } }
