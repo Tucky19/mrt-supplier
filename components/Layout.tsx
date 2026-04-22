@@ -28,10 +28,11 @@ export default function Layout({ title, description, children }: Props) {
           <Link href="/" className="font-bold text-lg tracking-wide">
             <span className="text-[var(--brand)]">MRT</span> Supplier
           </Link>
-          <nav className="flex gap-5 text-sm">
-            <Link href="/" className={router.pathname === "/" ? "font-semibold" : ""}>Home</Link>
-            <Link href="/products" className={router.pathname.startsWith("/products") ? "font-semibold" : ""}>Products</Link>
-            <Link href="/contact" className={router.pathname === "/contact" ? "font-semibold" : ""}>Contact</Link>
+          <nav className="flex gap-4 text-sm flex-wrap justify-end">
+            <Link href="/" className={router.pathname === "/" ? "font-semibold" : ""}>หน้าหลัก Home</Link>
+            <Link href="/products" className={router.pathname.startsWith("/products") ? "font-semibold" : ""}>สินค้า Products</Link>
+            <Link href="/quote" className={router.pathname === "/quote" ? "font-semibold" : ""}>ขอราคา RFQ</Link>
+            <Link href="/contact" className={router.pathname === "/contact" ? "font-semibold" : ""}>ติดต่อ Contact</Link>
           </nav>
         </div>
       </header>
