@@ -17,6 +17,12 @@ Create `.env.local` in the project root:
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
+Optional reliable RFQ endpoint (recommended):
+```env
+NEXT_PUBLIC_RFQ_ENDPOINT=https://your-rfq-endpoint.example.com/submit
+```
+If this is configured, `/quote` will POST JSON first and fallback to email if endpoint fails.
+
 ## Splash Screen
 - Shows every visit
 - Typewriter text: "Welcome to MRT Supplier"
